@@ -122,10 +122,8 @@ class Cam:
         print('============촬영완료')
 
     def send_data(self):
-        # upload_file(self.fname, myserial)
-        upload_file('20210531_102835777.jpg', myserial)
+        upload_file(self.fname, myserial)
         os.remove(self.fname)
-        pass
 
     def run(self):
         self.tempPeriod= True

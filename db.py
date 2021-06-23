@@ -13,4 +13,4 @@ def upload_file(fpath, serialnum):
     times = time.strftime('%Y%m%d', time.localtime())
     s3 = boto3.client('s3', aws_access_key_id=AWS_ACCESS_KEY_ID, aws_secret_access_key=AWS_SECRET_ACCESS_KEY, region_name=AWS_DEFAULT_REGION)
     res = s3.upload_file(fpath, 'name', '{}-{}'.format(serialnum, times)+'.jpg')
-    requests.get('http://13.36.176.131:5000/result/{}/{}'.format(serialnum, times))
+    requests.get('http://0.0.0.0:5000/result/{}/{}'.format(serialnum, times))

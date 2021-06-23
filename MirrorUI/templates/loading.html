@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block head %}
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+        setTimeout(function(){
+	    var user = {{data|tojson}};
+	    var form = document.createElement('form');
+	    form.setAttribute('method', 'post');
+	    form.setAttribute('action', ""+user['serialnum']+"/"+user['date']);
+	    document.charset = "utf-8";
+	    document.body.appendChild(form);
+	    form.submit();}, 0);
+        </script> 
+    </head>
+{% endblock %}
+    {% block content %}
+    <body>
+        <div id="loadingBar">
+            <img id="loading-image" src="" alt="loading..." />
+        </div>
+    </body>
+    {% endblock %}

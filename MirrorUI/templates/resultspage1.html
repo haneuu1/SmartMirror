@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block head %}
+        <meta charset="UTF-8" http-equiv="refresh" content="10; url=">
+    </head>
+{% endblock %}
+
+{% block content %}
+
+    <div class="result-container">
+        <div class="ai-title">&#60; 분석결과 &#62;</div>
+        <div class="ai-result-container">
+            {% if data.acne1.num %}
+            <p style="padding: 10px 10px">구진성 여드름 : {{data.acne1.num}}개 &nbsp;
+                {% for i in range(data.acne1.pre|length-1) %}
+                <img src="../static/assets/prescription{{data.acne1.pre[i]}}.png">{{data.acne1.pre[i]}}{% endfor %}</p>
+            {% else %}<p style="padding: 10px 10px">구진성 여드름 : 없음</p>{% endif %}
+            
+            {% if data.acne2.num %}
+            <p style="padding: 10px 10px">농포성 여드름 : {{data.acne2.num}}개 &nbsp;
+                {% for i in range(data.acne2.pre|length-1) %}
+                <img src="../static/assets/prescription{{data.acne2.pre[i]}}.png">{{data.acne2.pre[i]}}{% endfor %}</p>
+            {% else %}<p style="padding: 10px 10px">농포성 여드름 : 없음</p>{% endif %}
+            
+            {% if data.frekle.num %} 
+            <p style="padding: 10px 10px">기미 : 검출 &nbsp;
+                {% for i in range(data.frekle.pre|length-1) %}
+                <img src="../static/assets/prescription{{data.frekle.pre[i]}}.png">{{data.frekle.pre[i]}}{% endfor %}</p>
+            {% else %} <p style="padding: 10px 10px">기미 : 없음</p> {% endif %}
+
+            {% if data.darkcircle.num %} 
+            <p style="padding: 10px 10px">다크서클 : 검출 &nbsp;
+                {% for i in range(data.darkcircle.pre|length-1) %}
+                <img src="../static/assets/prescription{{data.darkcircle.pre[i]}}.png">{{data.darkcircle.pre[i]}}{% endfor %}</p>
+            {% else %} <p style="padding: 10px 10px">다크서클 : 없음</p> {% endif %}
+        </div>
+    </div>
+{% endblock content %}

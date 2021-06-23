@@ -57,7 +57,7 @@ class CommandHandler(threading.Thread):
                         pyautogui.hotkey('alt', 'tab') # 화면 전환
                     self.cam.run()
                     pyautogui.hotkey('alt', 'tab')
-                    self.web.run('http://13.36.176.131:5000/result/{}/{}'.format(myserial, time.strftime('%Y%m%d', time.localtime(time.time()))))
+                    self.web.run('http://0.0.0.0:5000/result/{}/{}'.format(myserial, time.strftime('%Y%m%d', time.localtime(time.time()))))
                     cnt += 1
 
             else:
